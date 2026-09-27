@@ -23,8 +23,8 @@ def call (Map configMap){
             stage('Read Version') {
                 steps {
                     script{
-                        appVersion = readFile(file: 'version')
-                        echo "app version: ${appVersion}"
+                        appversion = readFile(file: 'version')
+                        echo "app version: ${appversion}"
                     }
                 }
             }
