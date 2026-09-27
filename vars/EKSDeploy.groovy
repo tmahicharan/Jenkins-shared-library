@@ -36,7 +36,7 @@ def call (Map configMap){
                                 set -e  
                                 aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${deploy_to}
                                 kubectl get nodes
-                                sed -i "s/IMAGE_VERSION/\"${appversion}\"/g" values.yaml
+                                sed -i 's/IMAGE_VERSION/"'"${appversion}"'"/g' values.yaml
                                 echo "===== values.yaml ====="
                                 cat values.yaml
 
